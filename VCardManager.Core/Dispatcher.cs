@@ -19,8 +19,6 @@ public class Dispatcher : IDispatcher
         return this;
     }
 
-
-
     public void Dispatch<TCommand>(TCommand command) where TCommand : ICommand
     {
         ((IHandler<TCommand>)handlers[typeof(TCommand)]).ExecuteCommand(command);
